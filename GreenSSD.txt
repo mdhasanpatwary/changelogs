@@ -1,0 +1,43 @@
+===============================
+27 June, 2021
+===============================
+
+-------------------------------------------------------------------------------------------
+Backup your theme/style folder and files before applying these updates.
+-------------------------------------------------------------------------------------------
+The best way is to use a compare tool, like: https://sourceforge.net/projects/kdiff3/files/
+and use it to compare the 'folders' (the version you're using with the new version)
+-------------------------------------------------------------------------------------------
+Updating HTML Templates Requires Manual Work.
+-------------------------------------------------------------------------------------------
+
+
+*. WHMCS template updated to be compatible with latest "WHMCS Version 8.2.0":
+-----------------------------------------------------------------------------
+
+
+	*. File Changes:
+	--------------------------
+	-> header.tpl
+	-----------------------------
+
+		=> Deleted:
+		-----------
+		Line 41: <span class="d-none d-sm-inline">Notifications</span>
+
+		=> Added:
+		---------
+		Line 41: <span class="d-none d-sm-inline">{lang key='notifications'}</span>
+		
+		(After line 472 include new line): {include file="$template/includes/validateuser.tpl"}
+		
+	-> footer.tpl
+	-----------------------------
+
+		=> Deleted:
+		-----------
+		Line 229: <img src="{$WEB_ROOT}/assets/img/overlay-spinner.svg">
+
+		=> Added:
+		---------
+		Line 229: <img src="{$WEB_ROOT}/assets/img/overlay-spinner.svg" alt="">
